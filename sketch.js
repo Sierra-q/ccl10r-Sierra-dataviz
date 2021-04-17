@@ -94,8 +94,49 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 }
 
+let bodypoints = {};
+for (let bodypoint of data.bodypoints) {
+  let partname = bodypoint.part;
+  bodypoints[partname] = bodypoint;
+}
+// by Professor Steele
+
 function draw() {
   background(200);
+  // let connections = [
+  //   {first: "leftShoulder", second: "leftElbow"},
+  //   {first: "leftElbow", second: "leftWrist"},
+  //   {first: "rightShoulder", second: "rightElbow"},
+  //   {first: "rightElbow", second: "rightWrist"},
+  //   {first: "leftShoulder",second:"leftHip"},
+  //   {frist: "rightShoulder",second:"rightHip"},
+  //   {first: "leftHip",second:"rightHip"},
+  //   {first: "leftHip",second:"leftKnee"},
+  //   {first: "leftKnee",second:"leftAnkle"},
+  //   {first: "rightHip",second:"rightKnee"},
+  //   {first: "rightKnee",second:"rightAnkle"}
+  // ]
+  // by professor Steele
+   for (let m = 5; m<17; m++){
+    //  let a = connections[m].first.x;
+    //  let b = connecitons[m].first.y;
+    //  let c = connecitons[m].second.x;
+    //  let d = connections[m].second.y;
+    line(bodypoints.rightShoulder.x,bodypoints.rightShoulder.y,bodypoints.rightElbow.x,bodypoints.rightElbow.y); 
+    line(bodypoints.leftShoulder.x,bodypoints.leftShoulder.y,bodypoints.leftElbow.x,bodypoints.leftElbow.y); 
+    line(bodypoints.leftElbow.x,bodypoints.leftElbow.y,bodypoints.leftWrist.x,bodypoints.leftWrist.y); 
+    line(bodypoints.rightElbow.x,bodypoints.rightElbow.y,bodypoints.rightWrist.x,bodypoints.rightWrist.y); 
+    line(bodypoints.leftShoulder.x,bodypoints.leftShoulder.y,bodypoints.rightShoulder.x,bodypoints.rightShoulder.y); 
+    line(bodypoints.leftShoulder.x,bodypoints.leftShoulder.y,bodypoints.leftHip.x,bodypoints.leftHip.y); 
+    line(bodypoints.rightShoulder.x,bodypoints.rightShoulder.y,bodypoints.rightHip.x,bodypoints.rightHip.y); 
+    line(bodypoints.rightHip.x,bodypoints.rightHip.y,bodypoints.leftHip.x,bodypoints.leftHip.y); 
+    line(bodypoints.rightHip.x,bodypoints.rightHip.y,bodypoints.rightKnee.x,bodypoints.rightKnee.y); 
+    line(bodypoints.rightKnee.x,bodypoints.rightKnee.y,bodypoints.rightAnkle.x,bodypoints.rightAnkle.y); 
+    line(bodypoints.leftKnee.x,bodypoints.leftKnee.y,bodypoints.leftAnkle.x,bodypoints.leftAnkle.y); 
+    line(bodypoints.leftKnee.x,bodypoints.leftKnee.y,bodypoints.leftHip.x,bodypoints.leftHip.y); 
+
+  }
+
    for(let i = 0; i<17; i++){
     let x = data.bodypoints[i].x;
     let y = data.bodypoints[i].y;
@@ -104,4 +145,4 @@ function draw() {
    }
 }
 
-console.log(data.bodypoints[0])
+
