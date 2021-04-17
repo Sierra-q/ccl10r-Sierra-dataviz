@@ -136,13 +136,39 @@ function draw() {
     line(bodypoints.leftKnee.x,bodypoints.leftKnee.y,bodypoints.leftHip.x,bodypoints.leftHip.y); 
 
   }
+    
+   fill(255,235,205);
+   stroke(255,235,205);
+   ellipse(bodypoints.rightEar.x,bodypoints.rightEar.y,4,6);
+   ellipse(bodypoints.leftEar.x,bodypoints.leftEar.y,4,6);
 
-   for(let i = 0; i<17; i++){
+   strokeWeight(1);
+   stroke('black');
+   fill('red');
+   circle(bodypoints.nose.x,bodypoints.nose.y,7);
+
+   fill('white');
+   circle(bodypoints.leftEye.x,bodypoints.leftEye.y,10);
+   circle(bodypoints.rightEye.x,bodypoints.rightEye.y,10);
+
+   fill('black');
+   circle(bodypoints.leftEye.x,bodypoints.leftEye.y,4);
+   circle(bodypoints.rightEye.x,bodypoints.rightEye.y,4);
+
+   noFill();
+   strokeWeight(1.5);
+   ellipse(298,90,40,70);
+   line(290,105,300,105);
+
+   for(let i = 5; i<17; i++){
     let x = data.bodypoints[i].x;
     let y = data.bodypoints[i].y;
     fill('black'); 
+    stroke('black');
+    strokeWeight(3);
     circle(x, y, 5);
    }
-}
+   
+  }
 
 
