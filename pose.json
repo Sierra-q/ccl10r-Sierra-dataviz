@@ -1,4 +1,4 @@
-let data  = {
+{
   "frame": 1,
   "bodypoints": [
     {
@@ -88,20 +88,3 @@ let data  = {
     }
   ]
 }
-
-
-function setup() {
-  createCanvas(windowWidth, windowHeight);
-}
-
-function draw() {
-  background(200);
-   for(let i = 0; i<17; i++){
-    let x = data.bodypoints[i].x;
-    let y = data.bodypoints[i].y;
-    fill('black'); 
-    circle(x, y, 5);
-   }
-}
-
-console.log(data.bodypoints[0])
